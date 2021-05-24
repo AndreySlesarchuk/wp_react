@@ -128,11 +128,13 @@ export default function GmailTreeView() {
             <StyledTreeItem nodeId="1" labelText="All Mail" labelIcon={MailIcon} />
 
             <StyledTreeItem nodeId="3" labelText="Categories" labelIcon={Label}>
-                <StyledTreeItem
-                    nodeId="5"
-                    labelText="Social"
-                    labelIcon={SupervisorAccountIcon}
-                    labelInfo="90"
+                <StyledTreeItem nodeId="9" labelText="SubCategories" labelIcon={Label}>
+                    <StyledTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
+                                    color="#1a73e8"
+                                    bgColor="#e8f0fe"
+                    />
+                </StyledTreeItem>
+                <StyledTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
                     color="#1a73e8"
                     bgColor="#e8f0fe"
                 />
