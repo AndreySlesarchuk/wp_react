@@ -19,7 +19,7 @@ const Tab = styled.button`
 const ButtonGroup = styled.div`
   display: flex;
 `;
-const types = ['Home', 'Video', 'About'];
+const types = ['HomePage', 'Video', 'About'];
 
 function TabGroup() {
     const [active, setActive] = useState(types[0]);

@@ -1,6 +1,6 @@
 import './App.css';
 import TabGroup from "./components/TabGroup/TabGroup";
-import Home from "./components/pages/Home/Home";
+import HomePage from "./components/pages/HomePage/HomePage";
 
 function App() {
   // WP_React
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <TabGroup/>
-      <Home/>
+      <HomePage/>
     </div>
   );
 }
