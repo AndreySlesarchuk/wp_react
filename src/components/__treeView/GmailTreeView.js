@@ -13,106 +13,108 @@ import ForumIcon from '@material-ui/icons/Forum';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import AtmmTreeStyles, {useStyles} from "../AtmmTree/AtmmTreeStyles";
+import AtmmTreeItem from "../AtmmTree/AtmmTreeItem";
 
-const useTreeItemStyles = makeStyles((theme) => ({
-    root: {
-        color: theme.palette.text.secondary,
-        '&:hover > $content': {
-            backgroundColor: theme.palette.action.hover,
-        },
-        '&:focus > $content, &$selected > $content': {
-            backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[400]})`,
-            color: 'var(--tree-view-color)',
-        },
-        '&:focus > $content $label, &:hover > $content $label, &$selected > $content $label': {
-            backgroundColor: 'transparent',
-        },
-    },
-    content: {
-        color: theme.palette.text.secondary,
-        borderTopRightRadius: theme.spacing(2),
-        borderBottomRightRadius: theme.spacing(2),
-        paddingRight: theme.spacing(1),
-        fontWeight: theme.typography.fontWeightMedium,
-        '$expanded > &': {
-            fontWeight: theme.typography.fontWeightRegular,
-        },
-    },
-    group: {
-        marginLeft: 0,
-        '& $content': {
-            paddingLeft: theme.spacing(2),
-        },
-    },
-    expanded: {},
-    selected: {},
-    label: {
-        fontWeight: 'inherit',
-        color: 'inherit',
-    },
-    labelRoot: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0.5, 0),
-    },
-    labelIcon: {
-        marginRight: theme.spacing(1),
-    },
-    labelText: {
-        fontWeight: 'inherit',
-        flexGrow: 1,
-    },
-}));
+// const useTreeItemStyles = makeStyles((theme) => ({
+//     root: {
+//         color: theme.palette.text.secondary,
+//         '&:hover > $content': {
+//             backgroundColor: theme.palette.action.hover,
+//         },
+//         '&:focus > $content, &$selected > $content': {
+//             backgroundColor: `var(--tree-view-bg-color, ${theme.palette.grey[400]})`,
+//             color: 'var(--tree-view-color)',
+//         },
+//         '&:focus > $content $label, &:hover > $content $label, &$selected > $content $label': {
+//             backgroundColor: 'transparent',
+//         },
+//     },
+//     content: {
+//         color: theme.palette.text.secondary,
+//         borderTopRightRadius: theme.spacing(2),
+//         borderBottomRightRadius: theme.spacing(2),
+//         paddingRight: theme.spacing(1),
+//         fontWeight: theme.typography.fontWeightMedium,
+//         '$expanded > &': {
+//             fontWeight: theme.typography.fontWeightRegular,
+//         },
+//     },
+//     group: {
+//         marginLeft: 0,
+//         '& $content': {
+//             paddingLeft: theme.spacing(2),
+//         },
+//     },
+//     expanded: {},
+//     selected: {},
+//     label: {
+//         fontWeight: 'inherit',
+//         color: 'inherit',
+//     },
+//     labelRoot: {
+//         display: 'flex',
+//         alignItems: 'center',
+//         padding: theme.spacing(0.5, 0),
+//     },
+//     labelIcon: {
+//         marginRight: theme.spacing(1),
+//     },
+//     labelText: {
+//         fontWeight: 'inherit',
+//         flexGrow: 1,
+//     },
+// }));
 
-function StyledTreeItem(props) {
-    const classes = useTreeItemStyles();
-    const { labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other } = props;
+// function StyledTreeItem(props) {
+//     const classes = AtmmTreeStyles();
+//     const { labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other } = props;
+//
+//     return (
+//         <TreeItem
+//             label={
+//                 <div className={classes.labelRoot}>
+//                     <LabelIcon color="inherit" className={classes.labelIcon} />
+//                     <Typography variant="body2" className={classes.labelText}>
+//                         {labelText}
+//                     </Typography>
+//                     <Typography variant="caption" color="inherit">
+//                         {labelInfo}
+//                     </Typography>
+//                 </div>
+//             }
+//             style={{
+//                 '--tree-view-color': color,
+//                 '--tree-view-bg-color': bgColor,
+//             }}
+//             classes={{
+//                 root: classes.root,
+//                 content: classes.content,
+//                 expanded: classes.expanded,
+//                 selected: classes.selected,
+//                 group: classes.group,
+//                 label: classes.label,
+//             }}
+//             {...other}
+//         />
+//     );
+// }
+//
+// StyledTreeItem.propTypes = {
+//     bgColor: PropTypes.string,
+//     color: PropTypes.string,
+//     labelIcon: PropTypes.elementType.isRequired,
+//     labelInfo: PropTypes.string,
+//     labelText: PropTypes.string.isRequired,
+// };
 
-    return (
-        <TreeItem
-            label={
-                <div className={classes.labelRoot}>
-                    <LabelIcon color="inherit" className={classes.labelIcon} />
-                    <Typography variant="body2" className={classes.labelText}>
-                        {labelText}
-                    </Typography>
-                    <Typography variant="caption" color="inherit">
-                        {labelInfo}
-                    </Typography>
-                </div>
-            }
-            style={{
-                '--tree-view-color': color,
-                '--tree-view-bg-color': bgColor,
-            }}
-            classes={{
-                root: classes.root,
-                content: classes.content,
-                expanded: classes.expanded,
-                selected: classes.selected,
-                group: classes.group,
-                label: classes.label,
-            }}
-            {...other}
-        />
-    );
-}
-
-StyledTreeItem.propTypes = {
-    bgColor: PropTypes.string,
-    color: PropTypes.string,
-    labelIcon: PropTypes.elementType.isRequired,
-    labelInfo: PropTypes.string,
-    labelText: PropTypes.string.isRequired,
-};
-
-const useStyles = makeStyles({
-    root: {
-        height: 264,
-        flexGrow: 1,
-        maxWidth: 400,
-    },
-});
+// const useStyles = makeStyles({
+//     root: {
+//         height: 264,
+//         flexGrow: 1,
+//         maxWidth: 400,
+//     },
+// });
 
 export default function GmailTreeView() {
     const classes = useStyles();
@@ -125,28 +127,30 @@ export default function GmailTreeView() {
             defaultExpandIcon={<ArrowRightIcon />}
             defaultEndIcon={<div style={{ width: 24 }} />}
         >
-            <StyledTreeItem nodeId="1" labelText="All Mail" labelIcon={MailIcon} />
+            <AtmmTreeItem nodeId="1" labelText="All Mail" labelIcon={MailIcon} />
 
-            <StyledTreeItem nodeId="3" labelText="Categories" labelIcon={Label}>
-                <StyledTreeItem nodeId="9" labelText="SubCategories" labelIcon={Label}>
-                    <StyledTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
+            <AtmmTreeItem nodeId="3" labelText="Categories" labelIcon={Label}>
+                <AtmmTreeItem nodeId="9" labelText="SubCategories" labelIcon={Label}>
+                    <AtmmTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
                                     color="#1a73e8"
                                     bgColor="#e8f0fe"
                     />
-                </StyledTreeItem>
-                <StyledTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
+                </AtmmTreeItem>
+                <AtmmTreeItem nodeId="10" labelText="SubCategories2" labelIcon={Label}>
+                    <AtmmTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
+                                    color="#1a73e8"
+                                    bgColor="#e8f0fe"
+                    />
+                </AtmmTreeItem>
+                <AtmmTreeItem nodeId="5"  labelText="Social" labelIcon={SupervisorAccountIcon} labelInfo="90"
                     color="#1a73e8"
                     bgColor="#e8f0fe"
                 />
-                <StyledTreeItem
-                    nodeId="6"
-                    labelText="Updates"
-                    labelIcon={InfoIcon}
-                    labelInfo="2,294"
+                <AtmmTreeItem nodeId="6" labelText="Updates" labelIcon={InfoIcon} labelInfo="2,294"
                     color="#e3742f"
                     bgColor="#fcefe3"
                 />
-                <StyledTreeItem
+                <AtmmTreeItem
                     nodeId="7"
                     labelText="Forums"
                     labelIcon={ForumIcon}
@@ -154,7 +158,7 @@ export default function GmailTreeView() {
                     color="#a250f5"
                     bgColor="#f3e8fd"
                 />
-                <StyledTreeItem
+                <AtmmTreeItem
                     nodeId="8"
                     labelText="Promotions"
                     labelIcon={LocalOfferIcon}
@@ -162,9 +166,9 @@ export default function GmailTreeView() {
                     color="#3c8039"
                     bgColor="#e6f4ea"
                 />
-            </StyledTreeItem>
-            <StyledTreeItem nodeId="4" labelText="History" labelIcon={Label} />
-            <StyledTreeItem nodeId="2" labelText="Trash" labelIcon={DeleteIcon} />
+            </AtmmTreeItem>
+            <AtmmTreeItem nodeId="4" labelText="History" labelIcon={Label} />
+            <AtmmTreeItem nodeId="2" labelText="Trash" labelIcon={DeleteIcon} />
         </TreeView>
     );
 }
