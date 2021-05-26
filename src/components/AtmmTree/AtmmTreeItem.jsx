@@ -6,13 +6,13 @@ import PropTypes from "prop-types";
 
 const AtmmTreeItem = (props) => {
     const classes = AtmmTreeStyles();
-    const { labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other } = props;
+    const {labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other} = props;
 
     return (
         <TreeItem
             label={
                 <div className={classes.labelRoot}>
-                    <LabelIcon color="inherit" className={classes.labelIcon} />
+                    <LabelIcon color="inherit" className={classes.labelIcon}/>
                     <Typography variant="body2" className={classes.labelText}>
                         {labelText}
                     </Typography>

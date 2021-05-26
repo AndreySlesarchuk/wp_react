@@ -9,10 +9,11 @@ import ForumIcon from '@material-ui/icons/Forum';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import {useStyles} from "../AtmmTree/AtmmTreeStyles";
-import AtmmTreeItem from "../AtmmTree/AtmmTreeItem";
+import {useStyles} from "./AtmmTreeStyles";
+import AtmmTreeItem from "./AtmmTreeItem";
+import c from "./AtmmTreeItem.module.css"
 
-export default function GmailTreeView() {
+const AtmmTreeView = () => {
     const classes = useStyles();
 
     return (
@@ -42,17 +43,15 @@ export default function GmailTreeView() {
                     color="#1a73e8"
                     bgColor="#e8f0fe"
                 />
-                <AtmmTreeItem nodeId="6" labelText="Updates" labelIcon={InfoIcon} labelInfo="2,294"
-                    color="#e3742f"
-                    bgColor="#fcefe3"
+                <AtmmTreeItem className={c.atmmUpdate}
+                    nodeId="6" labelText="Updates" labelIcon={InfoIcon} labelInfo="2,294"
+
                 />
-                <AtmmTreeItem
+                <AtmmTreeItem className={c.atmmTree}
                     nodeId="7"
                     labelText="Forums"
                     labelIcon={ForumIcon}
                     labelInfo="3,566"
-                    color="#a250f5"
-                    bgColor="#f3e8fd"
                 />
                 <AtmmTreeItem
                     nodeId="8"
@@ -68,3 +67,5 @@ export default function GmailTreeView() {
         </TreeView>
     );
 }
+
+export default AtmmTreeView;
