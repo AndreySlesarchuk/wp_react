@@ -10,7 +10,7 @@ const Cards = () => {
     ])
     return (
         <div className='card'>
-            {cardList.map(card =>
+            { cardList.map(card =>
                 <div className={s.card}>
                     {card.text}
                 </div>
