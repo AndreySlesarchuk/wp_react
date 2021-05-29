@@ -5,13 +5,16 @@ import Cards from "./components/Card/Cards";
 import React from "react";
 
 function App() {
-  // WP_React
-    //<HomePage/>
+    // WP_React
+
+
+
 
   return (
     <div className="App">
         <TabGroup/>
-        <Cards/>
+        <HomePage/>
+
     </div>
   );
 }

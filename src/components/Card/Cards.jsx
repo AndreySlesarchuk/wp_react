@@ -9,7 +9,7 @@ const Cards = () => {
         {id: 4, order: 4, text: 'Карточка 4'},
     ])
     return (
-        <div className='card'>
+        <div className={s.app}>
             { cardList.map(card =>
                 <div className={s.card}>
                     {card.text}
