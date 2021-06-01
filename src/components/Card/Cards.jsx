@@ -8,17 +8,20 @@ const Cards = () => {
         {id: 3, order: 2, text: 'Карточка 2'},
         {id: 4, order: 4, text: 'Карточка 4'},
     ])
+    const [currentCard, setCurrentCard] = useState(null)
 
     function dragStartHandler(e, card) {
         console.log('drag', card)
+        setCurrentCard(card)
     }
 
     function dragEndHandler(e) {
-
+        e.target.style.background = 'white'
     }
 
     function dragOverHandler(e) {
         e.preventDefault()
+        e.target.style.background = 'lightgray'
     }
 
     function dropHandler(e, card) {
