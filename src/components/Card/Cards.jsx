@@ -35,9 +35,9 @@ const Cards = () => {
                     onDragEnd={(e) => dragEndHandler(e) }
                     onDragOver={(e) => dragOverHandler(e) }
                     onDrop={(e) => dropHandler(e, card) }
-
                     className={s.card}
-                    dragable = {true}>
+                    draggable={true}
+                >
                     {card.text}
                 </div>
             )}
