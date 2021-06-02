@@ -26,18 +26,35 @@ const Cards = () => {
 
     function dropHandler(e, card) {
         e.preventDefault()
-        console.log('drop', card)
+        setCardList(cardList.map(c => {
+            if (c.id === card.id) {
+                return {...c, order: currentCard.order}
+            }
+            if (c.id === currentCard.id) {
+                return {...c, order: card.order}
+            }
+            return c
+        }))
+        e.target.style.background = 'white'
+    }
+
+    const sortCards = (a, b) => {
+        if (a.order > b.order) {
+            return 1
+        } else {
+            return -1
+        }
     }
 
     return (
         <div className={s.app}>
-            { cardList.map(card =>
+            {cardList.sort(sortCards).map(card =>
                 <div
-                    onDragStart={(e) => dragStartHandler(e, card) }
-                    onDragLeave={(e) => dragEndHandler(e) }
-                    onDragEnd={(e) => dragEndHandler(e) }
-                    onDragOver={(e) => dragOverHandler(e) }
-                    onDrop={(e) => dropHandler(e, card) }
+                    onDragStart={(e) => dragStartHandler(e, card)}
+                    onDragLeave={(e) => dragEndHandler(e)}
+                    onDragEnd={(e) => dragEndHandler(e)}
+                    onDragOver={(e) => dragOverHandler(e)}
+                    onDrop={(e) => dropHandler(e, card)}
                     className={s.card}
                     draggable={true}
                 >
