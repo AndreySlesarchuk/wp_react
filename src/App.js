@@ -1,19 +1,12 @@
 import './App.css';
-import TabGroup from "./components/TabGroup/TabGroup";
-import HomePage from "./components/__pages/HomePage/HomePage";
 import React from "react";
+import TodoList from "./components/Todo/TodoList";
 
 function App() {
-    // WP_React
-
-
-
-
   return (
-    <div className="App">
-        <TabGroup/>
-        <HomePage/>
-
+    <div className="wrapper">
+        <h1>React tutorial</h1>
+        <TodoList />
     </div>
   );
 }
