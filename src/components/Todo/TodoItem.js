@@ -8,6 +8,6 @@ const styles = {
     }
 }
 
-export default function TodoItem() {
-    return <li>todo</li>
+export default function TodoItem(props) {
+    return <li>{props.title}</li>
 }
