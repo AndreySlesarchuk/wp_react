@@ -1,13 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const styles = {
-    ul: {
-        listStyle: 'none',
-        margin: 0,
-        padding: 0
-    }
+function TodoItem({todo, index}) {
+    return (
+        <li>
+            <span>
+                <input type="checkbox"/>
+            </span>
+            <strong>
+                {index + 1}
+            </strong>
+            {todo.title}
+        </li>)
 }
 
-export default function TodoItem(props) {
-    return <li>{props.title}</li>
+TodoItem.propTypes = {
+    todo: PropTypes.object.isRequired,
+    index: PropTypes.number
+
 }
+
+export default TodoItem
