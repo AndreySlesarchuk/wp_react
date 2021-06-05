@@ -20,8 +20,8 @@ function TodoItem({todo, index}) {
     return (
         <li style={styles.li}>
             <span>
-                <input type="checkbox" style={styles.input}/>
-                <strong>{index + 1}</strong>
+                <input type = "checkbox" style = {styles.input} />
+                <strong> {index + 1} </strong>
                 {todo.title}
             </span>
             <button className='rm'>&times;</button>
