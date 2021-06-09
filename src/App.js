@@ -1,6 +1,7 @@
-import './App.css';
-import React from "react";
-import TodoList from "./components/Todo/TodoList";
+import './App.css'
+import React from "react"
+import TodoList from "./components/Todo/TodoList"
+import Context from './context'
 
 function App() {
     const [todos, setTodos] = React.useState([
@@ -9,23 +10,29 @@ function App() {
         {id: 3, completed: false, title: "Купить соль"}
     ])
 
-  function toggleTodo(id) {
+    function toggleTodo(id) {
         setTodos(
             todos.map(todo => {
-            if (todo.id === id) {
-                todo.completed = !todo.completed
-            }
-            return todo
-        })
+                if (todo.id === id) {
+                    todo.completed = !todo.completed
+                }
+                return todo
+            })
         )
-  }
+    }
 
-  return (
-    <div className="wrapper">
-        <h1>React tutorial</h1>
-        <TodoList todos={todos} onToggle={toggleTodo}/>
-    </div>
-  );
+    function removeTodo(id) {
+        setTodos(todos.filter(todo => todo.id !== id))
+    }
+
+    return (
+        <Context.Provider value={{removeTodo}} >
+            <div className="wrapper">
+                <h1>React tutorial</h1>
+                <TodoList todos={todos} onToggle={toggleTodo}/>
+            </div>
+        </Context.Provider>
+    );
 }
 
 export default App;
