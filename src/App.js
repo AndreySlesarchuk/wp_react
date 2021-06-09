@@ -3,19 +3,21 @@ import React from "react";
 import TodoList from "./components/Todo/TodoList";
 
 function App() {
-    let todos = [
+    const [todos, setTodos] = React.useState([
         {id: 1, completed: false, title: "Купить хлеб"},
         {id: 2, completed: false, title: "Купить масло"},
         {id: 3, completed: false, title: "Купить соль"}
-    ]
+    ])
 
   function toggleTodo(id) {
-        todos = todos.map(todo => {
+        setTodos(
+            todos.map(todo => {
             if (todo.id === id) {
                 todo.completed = !todo.completed
             }
             return todo
         })
+        )
   }
 
   return (
@@ -27,3 +29,6 @@ function App() {
 }
 
 export default App;
+// Use state - начальное состояние всегда возвращает массив состоящий из двух элементов
+//
+//
