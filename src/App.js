@@ -2,11 +2,19 @@ import './App.css'
 import React, {useEffect} from "react"
 import TodoList from "./components/Todo/TodoList"
 import Context from './context'
-import AddTodo from "./components/Todo/AddTodo";
 import Loader from "./components/Loader";
 
 // https://jsonplaceholder.typicode.com/
 // https://loading.io/css/
+
+// dynamic component loading
+const AddTodo = React.lazy(
+    () =>
+        new Promise(resolve => {
+            setTimeout(() => {
+                resolve(import('./components/Todo/AddTodo'))
+            }, 3000)
+        }))
 
 function App() {
     const [todos, setTodos] = React.useState([])
@@ -16,7 +24,7 @@ function App() {
         fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
             .then(response => response.json())
             .then(todos => {
-                setTimeout(()=> {
+                setTimeout(() => {
                     setTodos(todos)
                     setLoading(false)
                 }, 2000)
@@ -52,8 +60,10 @@ function App() {
         <Context.Provider value={{removeTodo}}>
             <div className="wrapper">
                 <h1>React tutorial</h1>
-                <AddTodo onCreate={addTodo}/>
-                {loading && <Loader />}
+                <React.Suspense fallback={<p>Loading...</p>}>
+                    <AddTodo onCreate={addTodo}/>
+                </React.Suspense>
+                {loading && <Loader/>}
                 {todos.length
                     ? <TodoList todos={todos} onToggle={toggleTodo}/>
                     : loading ? null : (<p>No todos!</p>)}
@@ -63,6 +73,3 @@ function App() {
 }
 
 export default App;
-// Use state - начальное состояние всегда возвращает массив состоящий из двух элементов
-//
-//
