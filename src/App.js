@@ -3,6 +3,7 @@ import React, {useEffect} from "react"
 import TodoList from "./components/Todo/TodoList"
 import Context from './context'
 import Loader from "./components/Loader";
+import Modal from "./components/Modal/Modal";
 
 // https://jsonplaceholder.typicode.com/
 // https://loading.io/css/
@@ -60,6 +61,7 @@ function App() {
         <Context.Provider value={{removeTodo}}>
             <div className="wrapper">
                 <h1>React tutorial</h1>
+                <Modal />
                 <React.Suspense fallback={<p>Loading...</p>}>
                     <AddTodo onCreate={addTodo}/>
                 </React.Suspense>
