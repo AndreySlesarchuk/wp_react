@@ -14,7 +14,6 @@ export default class Modal extends React.Component {
                         <button>Close modal</button>
                     </div>
                 </div>
-
             </React.Fragment>
         )
     }
