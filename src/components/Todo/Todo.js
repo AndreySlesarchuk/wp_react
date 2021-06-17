@@ -1,7 +1,7 @@
 import './Todo.css'
 import React, {useEffect} from "react"
 
-import Context from '../../context'
+import Context from './context'
 import Loader from '../Loader'
 import TodoList from "./TodoList";
 import Modal from "../Modal/Modal";
