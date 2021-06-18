@@ -1,0 +1,19 @@
+
+N
+src/components/Todo/AddTodo.js,1\5\1519b9493db7af6a55c14220eaf6ba197fca3c2b
+H
+src/components/Loader.js,3\0\302df21011c35053905a3e1aae3479df354d5929
+N
+src/components/Modal/Modal.css,9\d\9d67c1b406f59559de2a8c0ab2f20fb6df99ba7f
+M
+src/components/Modal/Modal.js,0\6\0631e2e5e980738e3cb44c04b9c8123e3ddcfc64
+L
+src/components/Todo/Todo.css,e\1\e198bd21827186a6256beff436fdc132b7ad6499
+O
+src/components/Todo/TodoList.js,a\7\a79e8762ace11328723b1fbce47a0b31446539b5
+<
+package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
+O
+src/components/Todo/TodoItem.js,3\b\3b21ab04756a802f72ae8b16962e9be121992347
+9
+	yarn.lock,5\3\53585a096fe3a3b96321113856ae62602995a33b

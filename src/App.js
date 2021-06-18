@@ -1,6 +1,8 @@
 import React from "react"
-import Todo from "./components/Todo/Todo";
-import Cards from "./components/Card/Cards";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {Home} from "./components/__pages/Home";
+import {About} from "./components/__pages/About";
+import {Navbar} from "./components/Navbar";
 
 // npx create-react-app my-app
 // cd my-app
@@ -13,10 +15,15 @@ import Cards from "./components/Card/Cards";
 function App() {
 
     return (
-        <div className="container">
-            <h1>ATMM</h1>
-
-        </div>
+        <BrowserRouter>
+            <Navbar />
+            <div className="container pt-4">
+                <Switch>
+                    <Route path={'/'} exact component={Home} />
+                    <Route path={'/about'} component={About} />
+                </Switch>
+            </div>
+        </BrowserRouter>
     )
 }
 
