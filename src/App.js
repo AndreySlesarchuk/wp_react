@@ -11,7 +11,6 @@ import {Navbar} from "./components/Navbar";
 // yarn add node-sass react-router-dom bootstrap axios
 // yarn run start
 
-
 function App() {
 
     return (
