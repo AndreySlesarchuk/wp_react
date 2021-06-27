@@ -17,3 +17,5 @@ O
 src/components/Todo/TodoItem.js,3\b\3b21ab04756a802f72ae8b16962e9be121992347
 9
 	yarn.lock,5\3\53585a096fe3a3b96321113856ae62602995a33b
+H
+src/components/Navbar.js,2\d\2d4879a2b825dad8d007f4486bb3dca97c81dd6d
