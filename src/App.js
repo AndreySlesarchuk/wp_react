@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Home} from "./components/__pages/Home";
 import {About} from "./components/__pages/About";
 import {Navbar} from "./components/Navbar";
+import {Alert} from "./components/__pages/Alert";
 
 // npx create-react-app my-app
 // cd my-app
@@ -17,6 +18,7 @@ function App() {
         <BrowserRouter>
             <Navbar />
             <div className="container pt-4">
+                <Alert />
                 <Switch>
                     <Route path={'/'} exact component={Home} />
                     <Route path={'/about'} component={About} />

@@ -21,9 +21,6 @@ H
 src/components/Navbar.js,2\d\2d4879a2b825dad8d007f4486bb3dca97c81dd6d
 P
  src/components/Header/Header.jsx,c\1\c190362ff4dd89e9c16838b502ca303aeecc3db4
-:
-
-src/App.js,1\e\1e43fa63aecd2127be034b3fb9d4caa172275714
 T
 $src/components/TabGroup/TabGroup.jsx,b\d\bd3a224a578a5cecd9ad432925b5c896dad98535
 ;
@@ -34,5 +31,3 @@ N
 src/components/Todo/context.js,f\c\fc4117ff63d4311330af29695ca41a7ce6b44107
 K
 src/components/Todo/Todo.js,c\2\c23d3855be27653929ab66d2485fc597327dfebe
->
-src/index.scss,5\b\5bfd084cc3a318b78f32da1cd49fc9f987fb897f
