@@ -19,3 +19,5 @@ O
 	yarn.lock,5\3\53585a096fe3a3b96321113856ae62602995a33b
 H
 src/components/Navbar.js,2\d\2d4879a2b825dad8d007f4486bb3dca97c81dd6d
+P
+ src/components/Header/Header.jsx,c\1\c190362ff4dd89e9c16838b502ca303aeecc3db4
