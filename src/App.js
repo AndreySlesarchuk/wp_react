@@ -4,6 +4,7 @@ import {Home} from "./components/__pages/Home";
 import {About} from "./components/__pages/About";
 import {Navbar} from "./components/Navbar";
 import {Alert} from "./components/__pages/Alert";
+import {AlertState} from "./context/alert/AlertState";
 
 // npx create-react-app my-app
 // cd my-app
@@ -15,16 +16,18 @@ import {Alert} from "./components/__pages/Alert";
 function App() {
 
     return (
-        <BrowserRouter>
-            <Navbar />
-            <div className="container pt-4">
-                <Alert />
-                <Switch>
-                    <Route path={'/'} exact component={Home} />
-                    <Route path={'/about'} component={About} />
-                </Switch>
-            </div>
-        </BrowserRouter>
+        <AlertState>
+            <BrowserRouter>
+                <Navbar/>
+                <div className="container pt-4">
+                    <Alert/>
+                    <Switch>
+                        <Route path={'/'} exact component={Home}/>
+                        <Route path={'/about'} component={About}/>
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        </AlertState>
     )
 }
 
