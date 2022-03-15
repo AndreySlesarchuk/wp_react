@@ -5,6 +5,8 @@ import {About} from "./components/__pages/About";
 import {Navbar} from "./components/Navbar";
 import {Alert} from "./components/__pages/Alert";
 import {AlertState} from "./context/alert/AlertState";
+import {AtmRounded} from "@material-ui/icons";
+import AtmmTreeView from "./components/AtmmTree/AtmmTreeView";
 
 // npx create-react-app my-app
 // cd my-app
@@ -20,6 +22,7 @@ function App() {
             <BrowserRouter>
                 <Navbar/>
                 <div className="container pt-4">
+                    <AtmmTreeView />
                     <Alert/>
                     <Switch>
                         <Route path={'/'} exact component={Home}/>
